@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+public class Main{
+    
+    int sum(int x){
+        int sum=0;
+        while(x>0){
+            sum+=x%10;
+            x /= 10;
+        }
+        return sum;
+    }
+    int sumofdigits(int number){
+        while(number>=10){
+            number=sum(number);
+        }
+        return number;
+    }
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    Main ob=new Main();
+    System.out.println("Enter a number: ");
+    int num=sc.nextInt();
+    int result=ob.sumofdigits(num);
+    System.out.println("The sum of the given digits is: "+result);
+    }
+}
