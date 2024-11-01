@@ -1,0 +1,51 @@
+import java.io.*;
+ 
+public class Main {
+ 
+    // Function to calculate the area where parameters
+    // passed are three sides of a triangle
+    static float area(float r, float s, float t)
+    {
+        // Condition check over sides of triangle
+        if (r < 0 || s < 0 || t < 0 || (r + s <= t)
+            || r + t <= s || s + t <= r)
+ 
+        // Length of sides must be positive and sum of
+        // any two sides must be smaller than third side
+ 
+        {
+            // print message if condition fails
+            System.out.println("Not a valid input");
+            System.exit(0);
+        }
+ 
+        /*else*/
+ 
+        // Finding Semi perimeter of the triangle
+        // using formula
+        float S = (r + s + t) / 2;
+ 
+        // Finding the area of the triangle
+        float A = (float)Math.sqrt(S * (S - r) * (S - s)
+                                   * (S - t));
+ 
+        // return area value
+        return A;
+    }
+ 
+    // Main driver code
+    public static void main(String[] args)
+    {
+        // custom inputs of sides of values
+ 
+        // Sides of the triangle
+        float r = 5.0f;
+        float s = 6.0f;
+        float t = 7.0f;
+ 
+        // Calling area function and
+        // printing the area of triangle
+        System.out.println("Area of the triangle: "
+                           + area(r, s, t));
+    }
+}
